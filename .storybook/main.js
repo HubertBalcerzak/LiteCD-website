@@ -1,20 +1,13 @@
 module.exports = {
   stories: [
-    '../stories/**/*.stories.tsx',
-    '../stories/**/*.stories.ts',
-    '../stories/**/*.stories.js'
+    '../src/components/**/*.stories.tsx',
+    '../src/components/**/*.stories.ts',
+    '../src/components/**/*.stories.js'
   ],
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-viewport',
-    '@storybook/addon-essentials',
-    'storybook-addon-emotion-theme/dist/register',
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        configureJSX: true
-      }
-    }
+    '@storybook/addon-essentials'
   ]
 }
