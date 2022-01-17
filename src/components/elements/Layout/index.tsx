@@ -7,9 +7,7 @@ import Page from '../../blocks/Page'
 import Header from './Header'
 import Footer from './Footer'
 
-import { ILayoutData } from '../../../utils/contentful/models/getLayoutData'
-
-export interface LayoutProps extends ILayoutData {
+export interface LayoutProps {
   children: ReactChild
   title?: string
 }
