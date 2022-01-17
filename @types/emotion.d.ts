@@ -1,6 +1,6 @@
 import '@emotion/react'
 
-import { ITheme } from '../src/assets/theme'
+import { Theme as ITheme } from '@material-ui/core'
 
 declare module '@emotion/react' {
   export interface Theme extends ITheme {}

@@ -2,8 +2,6 @@ import { keyframes } from '@emotion/css'
 import styled from '@emotion/styled'
 import React from 'react'
 
-import theme from '../../assets/theme'
-
 const spinner = keyframes`
   0% {
     transform: rotate(0deg);
@@ -30,12 +28,12 @@ const LoaderStyle = styled('span')<{ loaderColor: string }>`
   animation: ${spinner} 1s linear infinite;
 `
 
-interface LoaderProps {
+export interface LoaderProps {
   loaderColor?: string
   style?: Record<string, unknown>
 }
 
-const Loader = ({ loaderColor = theme.colors.npwBase09, ...props }: LoaderProps) => (
+const Loader = ({ loaderColor = '#000000', ...props }: LoaderProps) => (
   <LoaderStyle loaderColor={loaderColor} {...props} />
 )
 
