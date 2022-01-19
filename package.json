@@ -10,7 +10,8 @@
     "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "lighthouse-check": "lhci autorun"
+    "lighthouse-check": "lhci autorun",
+    "test": "jest --config=jest.config.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -39,11 +40,13 @@
     "@storybook/node-logger": "^6.4.13",
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.13",
+    "@types/jest": "^27.4.0",
     "@types/node": "^16.7.4",
     "@types/react": "^17.0.6",
     "@types/react-stickynode": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
+    "babel-jest": "^27.4.6",
     "babel-loader": "^8.2.2",
     "chromatic": "^6.3.4",
     "contentful-typescript-codegen": "^3.2.2",
@@ -52,7 +55,10 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "file-loader": "^6.2.0",
+    "jest": "^27.4.7",
+    "jest-css-modules": "^2.1.0",
     "prettier": "^2.3.0",
+    "ts-jest": "^27.1.3",
     "typescript": "^4.2.4"
   }
 }
