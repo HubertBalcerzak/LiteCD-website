@@ -15,6 +15,7 @@ function hexToRGB(hex: string, alpha?: number): string {
 
     return `rgb(${r},${g},${b})`
   } catch (e) {
+    /* istanbul ignore next */
     if (process?.env?.NODE_ENV === 'development') {
       console.error(e)
     }

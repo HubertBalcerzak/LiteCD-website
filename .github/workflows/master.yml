@@ -48,10 +48,17 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
       - name: Test
         run: yarn test
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: JEST Tests            # Name of the check run which will be created
+          path: reports/jest-*.xml    # Path to test results
+          reporter: jest-junit        # Format of test results
   build-website:
     name: Website Build
     runs-on: ubuntu-latest
-    needs: [eslint, tests]
+    needs: eslint
     timeout-minutes: 5
     steps:
       - name: Checkout Repo
@@ -71,7 +78,7 @@ jobs:
   build-storybook:
       name: Storybook Build
       runs-on: ubuntu-latest
-      needs: [eslint, tests]
+      needs: eslint
       timeout-minutes: 5
       steps:
         - name: Checkout Repo

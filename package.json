@@ -11,7 +11,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lighthouse-check": "lhci autorun",
-    "test": "jest --config=jest.config.js"
+    "test": "jest --config=jest.config.js",
+    "test-coverage": "jest --config=jest.config.js --coverage"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -57,8 +58,18 @@
     "file-loader": "^6.2.0",
     "jest": "^27.4.7",
     "jest-css-modules": "^2.1.0",
+    "jest-junit": "^13.0.0",
     "prettier": "^2.3.0",
     "ts-jest": "^27.1.3",
     "typescript": "^4.2.4"
+  },
+  "jest-junit": {
+    "outputDirectory": "reports",
+    "outputName": "jest-junit.xml",
+    "ancestorSeparator": " › ",
+    "uniqueOutputName": "false",
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}"
   }
 }
