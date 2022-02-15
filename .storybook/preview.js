@@ -2,7 +2,7 @@ import { addDecorator } from '@storybook/react'
 import { CssBaseline } from '@material-ui/core'
 import GlobalStyle from '../src/components/elements/Layout/GlobalStyle'
 import { ThemeProvider } from 'emotion-theming'
-import theme from '../src/assets/theme/theme';
+import theme from '../src/assets/theme';
 
 addDecorator((story) => (
   <ThemeProvider theme={theme}>
