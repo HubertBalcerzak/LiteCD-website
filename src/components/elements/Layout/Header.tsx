@@ -4,7 +4,13 @@ import { css } from '@emotion/css'
 import Page from '../../blocks/Page'
 import ThemeSwitch from '../ThemeSwitch'
 
-const Header: React.FC = (props) => {
+interface IHeader {
+  children?: null
+}
+
+const Header: React.FC<IHeader> = (props) => {
+  const theme = useTheme()
+
   return (
     <Page.Header
       {...props}
@@ -12,7 +18,7 @@ const Header: React.FC = (props) => {
         display: flex;
         justify-content: space-between;
         padding: 5px 20px;
-        background-color: #ccc8d0; //TODO change depending on color theme
+        background-color: ${theme.palette.background.default}
       `}
     >
       <div>logo placeholder</div>

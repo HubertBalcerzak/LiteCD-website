@@ -7,8 +7,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 export interface CustomizedBoxProps {
   icon?: React.ReactNode
   link?: string
-  title: string
-  children?: any
+  children: React.ReactNode
 }
 
 const CustomizedCard: React.FC<CustomizedBoxProps> = ({ icon, link = '#', title, children }) => {

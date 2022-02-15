@@ -72,13 +72,7 @@ const HomePageView = ({}: IHomePageViewProps) => {
             `}
           >
             <CustomizedCard icon={<AdminPanelSettingsIcon />} title='Administration Console'>
-              Some long text lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales
-              lectus quis erat cursus, vestibulum posuere est scelerisque. Donec vestibulum quam
-              felis, eleifend varius tortor lobortis quis. Nunc luctus metus a nisi mollis, eget
-              dignissim elit accumsan. Cras luctus mi enim, malesuada imperdiet sapien congue a.
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur fermentum diam
-              eget tellus dictum, id ultricies leo consectetur. Integer vitae dui quis ex fermentum
-              venenatis. Mauris arcu dui, consectetur vel pellentesque in, ultrices condimentum nibh
+              Everything you need to manage your instances
             </CustomizedCard>
           </Card>
           <Card
@@ -87,7 +81,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
               padding: ${theme.spacing(2)}px;
             `}
           >
-            <CustomizedCard icon={<AppsIcon />} title='Applications' />
+            <CustomizedCard icon={<AppsIcon />} title='Applications'>
+              Public apps
+            </CustomizedCard>
           </Card>
           <Card
             className={css`
@@ -95,7 +91,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
               padding: ${theme.spacing(2)}px;
             `}
           >
-            <CustomizedCard icon={<StarOutlineIcon />} title='Starchasers' />
+            <CustomizedCard icon={<StarOutlineIcon />} title='Starchasers'>
+              Our beloved organization
+            </CustomizedCard>
           </Card>
           <Card
             className={css`
@@ -103,7 +101,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
               padding: ${theme.spacing(2)}px;
             `}
           >
-            <CustomizedCard icon={<GitHubIcon />} title='Github' />
+            <CustomizedCard icon={<GitHubIcon />} title='Github'>
+              Project repository
+            </CustomizedCard>
           </Card>
           <Card
             className={css`

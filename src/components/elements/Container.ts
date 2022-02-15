@@ -3,9 +3,7 @@ import theme from '../../assets/theme'
 import constants from '../../assets/theme/constants'
 
 const Container = styled('div')`
-  width: 94vw;
-  max-width: 1660px;
-  padding: 2em 0;
+  width: ${constants.containerSizes.xl};
   margin: 0 auto;
   @media (max-width: ${theme.breakpoints.values.xl}) {
     width: ${constants.containerSizes.lg};
