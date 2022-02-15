@@ -10,7 +10,7 @@ export interface CustomizedBoxProps {
   children: React.ReactNode
 }
 
-const CustomizedCard: React.FC<CustomizedBoxProps> = ({ icon, link = '#', title, children }) => {
+const CustomizedCard: React.FC<CustomizedBoxProps> = ({ icon, link = '#', children }) => {
   const theme = useTheme()
 
   return (
