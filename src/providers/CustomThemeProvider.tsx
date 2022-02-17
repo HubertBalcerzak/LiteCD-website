@@ -1,5 +1,5 @@
 import React, { createContext, useMemo, useState } from 'react'
-import { Theme, createTheme } from '@material-ui/core/styles'
+import { Theme, createTheme } from '@mui/material/styles'
 
 import { ThemeMode } from '../../@types/emotion.d'
 import getDesignTokens from '../assets/theme'

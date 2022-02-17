@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppProps } from 'next/app'
-import { MuiThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react'
 
 import GlobalStyle from '../components/elements/Layout/GlobalStyle'

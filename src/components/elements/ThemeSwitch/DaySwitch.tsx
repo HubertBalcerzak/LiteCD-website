@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { ThemeMode } from '../../../../@types/emotion.d'
 
 interface ISwitchProps extends SwitchProps {
-  mode: ThemeMode
+  value: ThemeMode
 }
 
 const DaySwitch: FC<ISwitchProps> = styled(Switch)((props) => ({
@@ -32,7 +32,7 @@ const DaySwitch: FC<ISwitchProps> = styled(Switch)((props) => ({
   },
   '& .MuiSwitch-thumb': {
     backgroundColor:
-      props.mode === ThemeMode.DARK
+      props.value === ThemeMode.DARK
         ? props.theme.palette.secondary.light
         : props.theme.palette.secondary.dark,
     width: 32,

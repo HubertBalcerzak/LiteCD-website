@@ -11,7 +11,7 @@ const ThemeSwitch = () => {
     <DaySwitch
       defaultChecked={customThemeContext.mode === ThemeMode.DARK}
       onChange={customThemeContext.toggleColorMode}
-      mode={customThemeContext.mode}
+      value={customThemeContext.mode}
       inputProps={{ 'aria-label': 'Day switch' }}
     />
   )
