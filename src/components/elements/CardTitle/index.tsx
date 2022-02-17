@@ -5,10 +5,9 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 
 export interface CustomizedBoxProps {
   icon?: React.ReactNode
-  title: string
 }
 
-const CardTitle: React.FC<CustomizedBoxProps> = ({ icon, title }) => {
+const CardTitle: React.FC<CustomizedBoxProps> = ({ icon, children }) => {
   const theme = useTheme()
 
   return (
@@ -30,7 +29,7 @@ const CardTitle: React.FC<CustomizedBoxProps> = ({ icon, title }) => {
           margin-left: 10px;
         `}
       >
-        {title}
+        {children}
         <ChevronRightIcon
           className={css`
             margin-left: 5px;

@@ -67,7 +67,7 @@ const HomePageView = ({}: IHomePageViewProps) => {
         >
           <Link href='#' passHref>
             <a>
-              <CardTitle icon={<AdminPanelSettingsIcon />} title='Administration Console' />
+              <CardTitle icon={<AdminPanelSettingsIcon />}>Administration Console</CardTitle>
             </a>
           </Link>
           Everything you need to manage your instances
@@ -80,7 +80,7 @@ const HomePageView = ({}: IHomePageViewProps) => {
         >
           <Link href='#' passHref>
             <a>
-              <CardTitle icon={<AppsIcon />} title='Applications' />
+              <CardTitle icon={<AppsIcon />}>Applications</CardTitle>
             </a>
           </Link>
           Public apps
@@ -91,9 +91,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
             grid-area: starchasers;
           `}
         >
-          <Link href='#' passHref>
-            <a>
-              <CardTitle icon={<StarOutlineIcon />} title='Starchasers' />
+          <Link href='https://github.com/Starchasers' passHref>
+            <a target='_blank' rel='noopener noreferrer'>
+              <CardTitle icon={<StarOutlineIcon />}>Starchasers</CardTitle>
             </a>
           </Link>
           Our beloved organization
@@ -104,9 +104,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
             grid-area: github;
           `}
         >
-          <Link href='#' passHref>
-            <a>
-              <CardTitle icon={<GitHubIcon />} title='Github' />
+          <Link href='https://github.com/HubertBalcerzak/LiteCD' passHref>
+            <a target='_blank' rel='noopener noreferrer'>
+              <CardTitle icon={<GitHubIcon />}>Github</CardTitle>
             </a>
           </Link>
           Project repository
@@ -117,9 +117,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
             grid-area: issues;
           `}
         >
-          <Link href='#' passHref>
-            <a>
-              <CardTitle icon={<BugReportIcon />} title='Report an issue' />
+          <Link href='https://github.com/HubertBalcerzak/LiteCD/issues' passHref>
+            <a target='_blank' rel='noopener noreferrer'>
+              <CardTitle icon={<BugReportIcon />}>Report an issue</CardTitle>
             </a>
           </Link>
         </CustomizedCard>

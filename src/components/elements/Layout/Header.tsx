@@ -23,7 +23,7 @@ const Header: React.FC<IHeader> = (props) => {
       `}
     >
       <div>logo placeholder</div>
-      <ThemeSwitch defaultChecked />
+      <ThemeSwitch />
     </Page.Header>
   )
 }
