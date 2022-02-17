@@ -1,15 +1,25 @@
 import { addDecorator } from '@storybook/react'
 import { CssBaseline } from '@mui/material'
-import GlobalStyle from '../src/components/elements/Layout/GlobalStyle'
 import { ThemeProvider } from 'emotion-theming'
-import theme from '../src/assets/theme'
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
+
+import GlobalStyle from '../src/components/elements/Layout/GlobalStyle'
+import CustomThemeProvider, { CustomThemeContext } from '../src/providers/CustomThemeProvider'
 
 addDecorator((story) => (
-  <ThemeProvider theme={theme}>
-    {GlobalStyle}
-    <CssBaseline />
-    {story()}
-  </ThemeProvider>
+  <CustomThemeProvider>
+    <CustomThemeContext.Consumer>
+      {(customThemeContext) => (
+        <MuiThemeProvider theme={customThemeContext.theme}>
+          <ThemeProvider theme={customThemeContext.theme}>
+            {GlobalStyle}
+            <CssBaseline />
+            {story()}
+          </ThemeProvider>
+        </MuiThemeProvider>
+      )}
+    </CustomThemeContext.Consumer>
+  </CustomThemeProvider>
 ))
 
 const customViewports = {

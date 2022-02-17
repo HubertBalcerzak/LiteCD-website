@@ -1,16 +1,16 @@
 import React, { useContext } from 'react'
-import { ThemeMode } from '../../../../@types/emotion.d'
+import { ThemeMode } from '../../../../@types/emotion'
 
 import { CustomThemeContext } from '../../../providers/CustomThemeProvider'
-import DaySwitch from './DaySwitch'
+import DaySwitch from '../inputs/DaySwitch'
 
 const ThemeSwitch = () => {
   const customThemeContext = useContext(CustomThemeContext)
 
   return (
     <DaySwitch
-      defaultChecked={customThemeContext.mode === ThemeMode.DARK}
-      onChange={customThemeContext.toggleColorMode}
+      checked={customThemeContext.mode === ThemeMode.DARK}
+      onChange={() => customThemeContext.toggleColorMode()}
       value={customThemeContext.mode}
       inputProps={{ 'aria-label': 'Day switch' }}
     />

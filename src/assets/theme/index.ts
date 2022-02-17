@@ -1,4 +1,4 @@
-import { ThemeMode } from '../../../@types/emotion.d'
+import { ThemeMode } from '../../../@types/emotion'
 
 const getDesignTokens = (mode: ThemeMode) => ({
   breakpoints: {

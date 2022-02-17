@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Switch, SwitchProps } from '@mui/material'
 import styled from '@emotion/styled'
 
-import { ThemeMode } from '../../../../@types/emotion.d'
+import { ThemeMode } from '../../../../../@types/emotion'
 
 interface ISwitchProps extends SwitchProps {
   value: ThemeMode

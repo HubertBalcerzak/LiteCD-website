@@ -1,12 +1,12 @@
 import React, { createContext, useMemo, useState } from 'react'
 import { Theme, createTheme } from '@mui/material/styles'
 
-import { ThemeMode } from '../../@types/emotion.d'
+import { ThemeMode } from '../../@types/emotion'
 import getDesignTokens from '../assets/theme'
 
 interface ICustomThemeContext {
   mode: ThemeMode
-  toggleColorMode: () => void
+  toggleColorMode: (mode?: ThemeMode) => void
   theme: Partial<Theme>
 }
 
@@ -21,8 +21,8 @@ export const CustomThemeContext = createContext<ICustomThemeContext>(defaultValu
 const CustomThemeProvider: React.FC = (props) => {
   const [mode, setMode] = useState<ThemeMode>(defaultValue.mode)
 
-  const toggleColorMode = () => {
-    setMode((prevMode) => (prevMode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT))
+  const toggleColorMode = (mode?: ThemeMode) => {
+    setMode((prevMode) => mode ?? (prevMode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT))
   }
 
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode])
