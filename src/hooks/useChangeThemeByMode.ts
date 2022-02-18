@@ -2,10 +2,14 @@ import { ThemeMode } from '../../@types/emotion'
 import { useContext, useEffect } from 'react'
 import { CustomThemeContext } from '../providers/CustomThemeProvider'
 
+export interface IArgMode {
+  mode: ThemeMode
+}
+
 export const argMode = {
   mode: {
-    defaultValue: 'dark',
-    options: ['light', 'dark'],
+    defaultValue: ThemeMode.DARK,
+    options: [ThemeMode.LIGHT, ThemeMode.DARK],
     type: { name: 'string', required: true },
     control: { type: 'radio' }
   }
@@ -13,7 +17,12 @@ export const argMode = {
 
 const useChangeThemeByMode = (mode: ThemeMode) => {
   const { toggleColorMode } = useContext(CustomThemeContext)
-  useEffect(() => toggleColorMode(mode), [mode])
+
+  useEffect(() => {
+    if (mode) {
+      toggleColorMode(mode)
+    }
+  }, [mode])
 }
 
 export default useChangeThemeByMode

@@ -5,8 +5,11 @@ import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
 import GlobalStyle from '../src/components/elements/Layout/GlobalStyle'
 import CustomThemeProvider, { CustomThemeContext } from '../src/providers/CustomThemeProvider'
+// @ts-ignore
+import React from 'react'
+import useChangeThemeByMode from '../src/hooks/useChangeThemeByMode'
 
-addDecorator((story) => (
+addDecorator((story, storyContext) => (
   <CustomThemeProvider>
     <CustomThemeContext.Consumer>
       {(customThemeContext) => (
@@ -14,7 +17,11 @@ addDecorator((story) => (
           <ThemeProvider theme={customThemeContext.theme}>
             {GlobalStyle}
             <CssBaseline />
-            {story()}
+            {React.createElement(() => {
+              useChangeThemeByMode(storyContext.args?.mode)
+              return story()
+            })}
+            {/*{story()}*/}
           </ThemeProvider>
         </MuiThemeProvider>
       )}
