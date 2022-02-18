@@ -15,6 +15,7 @@ import Container from '../../components/elements/Container'
 import CustomizedCard from '../../components/elements/CustomizedCard'
 import CardTitle from '../../components/elements/CardTitle'
 import Link from 'next/link'
+import { Typography } from '@mui/material'
 
 interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
@@ -57,6 +58,13 @@ const HomePageView = ({}: IHomePageViewProps) => {
               'starchasers'
               'github'
               'issues';
+
+            a {
+              h2,
+              h3 {
+                font-size: ${theme.typography.h5.fontSize};
+              }
+            }
           }
         `}
       >
@@ -67,10 +75,14 @@ const HomePageView = ({}: IHomePageViewProps) => {
         >
           <Link href='#' passHref>
             <a>
-              <CardTitle icon={<AdminPanelSettingsIcon />}>Administration Console</CardTitle>
+              <CardTitle icon={<AdminPanelSettingsIcon />}>
+                <Typography variant='h5' variantMapping={{ h5: 'h2' }}>
+                  Administration Console
+                </Typography>
+              </CardTitle>
             </a>
           </Link>
-          Everything you need to manage your instances
+          <Typography variant='body1'>Everything you need to manage your instances</Typography>
         </CustomizedCard>
 
         <CustomizedCard
@@ -80,10 +92,14 @@ const HomePageView = ({}: IHomePageViewProps) => {
         >
           <Link href='#' passHref>
             <a>
-              <CardTitle icon={<AppsIcon />}>Applications</CardTitle>
+              <CardTitle icon={<AppsIcon />}>
+                <Typography variant='h5' variantMapping={{ h5: 'h2' }}>
+                  Applications
+                </Typography>
+              </CardTitle>
             </a>
           </Link>
-          Public apps
+          <Typography variant='body1'>Public apps</Typography>
         </CustomizedCard>
 
         <CustomizedCard
@@ -93,10 +109,14 @@ const HomePageView = ({}: IHomePageViewProps) => {
         >
           <Link href='https://github.com/Starchasers' passHref>
             <a target='_blank' rel='noopener noreferrer'>
-              <CardTitle icon={<StarOutlineIcon />}>Starchasers</CardTitle>
+              <CardTitle icon={<StarOutlineIcon />}>
+                <Typography variant='h6' variantMapping={{ h6: 'h3' }}>
+                  Starchasers
+                </Typography>
+              </CardTitle>
             </a>
           </Link>
-          Our beloved organization
+          <Typography variant='body1'>Our beloved organization</Typography>
         </CustomizedCard>
 
         <CustomizedCard
@@ -106,10 +126,14 @@ const HomePageView = ({}: IHomePageViewProps) => {
         >
           <Link href='https://github.com/HubertBalcerzak/LiteCD' passHref>
             <a target='_blank' rel='noopener noreferrer'>
-              <CardTitle icon={<GitHubIcon />}>Github</CardTitle>
+              <CardTitle icon={<GitHubIcon />}>
+                <Typography variant='h6' variantMapping={{ h6: 'h3' }}>
+                  Github
+                </Typography>
+              </CardTitle>
             </a>
           </Link>
-          Project repository
+          <Typography variant='body1'>Project repository</Typography>
         </CustomizedCard>
 
         <CustomizedCard
@@ -119,7 +143,11 @@ const HomePageView = ({}: IHomePageViewProps) => {
         >
           <Link href='https://github.com/HubertBalcerzak/LiteCD/issues' passHref>
             <a target='_blank' rel='noopener noreferrer'>
-              <CardTitle icon={<BugReportIcon />}>Report an issue</CardTitle>
+              <CardTitle icon={<BugReportIcon />}>
+                <Typography variant='h6' variantMapping={{ h6: 'h3' }}>
+                  Report an issue
+                </Typography>
+              </CardTitle>
             </a>
           </Link>
         </CustomizedCard>

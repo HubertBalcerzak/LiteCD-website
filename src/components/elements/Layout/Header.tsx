@@ -4,6 +4,7 @@ import { useTheme } from '@emotion/react'
 
 import Page from '../../blocks/Page'
 import ThemeSwitch from '../ThemeSwitch'
+import { Typography } from '@mui/material'
 
 interface IHeader {
   children?: null
@@ -16,13 +17,13 @@ const Header: React.FC<IHeader> = (props) => {
     <Page.Header
       {...props}
       className={css`
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr auto;
         padding: 5px 20px;
         background-color: ${theme.palette.primary.dark};
       `}
     >
-      <div>logo placeholder</div>
+      <Typography variant='h6'>LiteCD</Typography>
       <ThemeSwitch />
     </Page.Header>
   )

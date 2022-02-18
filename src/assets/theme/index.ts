@@ -1,4 +1,5 @@
 import { ThemeMode } from '../../../@types/emotion'
+import { rgba } from 'polished'
 
 const getDesignTokens = (mode: ThemeMode) => ({
   breakpoints: {
@@ -26,6 +27,11 @@ const getDesignTokens = (mode: ThemeMode) => ({
             dark: '#e78b12',
             contrastText: '#000'
           },
+          text: {
+            primary: rgba(0, 0, 0, 0.87),
+            secondary: rgba(0, 0, 0, 0.6),
+            disabled: rgba(0, 0, 0, 0.38)
+          },
           background: {
             default: '#eceff1'
           }
@@ -42,6 +48,12 @@ const getDesignTokens = (mode: ThemeMode) => ({
             light: '#ffd95b',
             dark: '#e78b12',
             contrastText: '#000'
+          },
+          text: {
+            primary: '#fff',
+            secondary: rgba(255, 255, 255, 0.7),
+            disabled: rgba(255, 255, 255, 0.5),
+            icon: rgba(255, 255, 255, 0.5)
           },
           background: {
             default: '#4b636e'

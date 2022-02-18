@@ -17,8 +17,6 @@ const CardTitle: React.FC<CustomizedBoxProps> = ({ icon, children }) => {
         align-items: center;
         margin-bottom: 6px;
         color: ${theme.palette.text.primary};
-        font-weight: ${theme.typography.fontWeightMedium};
-        font-size: 22px;
       `}
     >
       {icon}
@@ -34,6 +32,7 @@ const CardTitle: React.FC<CustomizedBoxProps> = ({ icon, children }) => {
           className={css`
             margin-left: 5px;
             font-size: 20px;
+            height: 32px;
           `}
         />
       </div>

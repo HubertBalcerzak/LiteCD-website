@@ -1,5 +1,6 @@
 import React, { createContext, useMemo, useState } from 'react'
-import { Theme, createTheme } from '@mui/material/styles'
+import { createTheme, Theme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 import { ThemeMode } from '../../@types/emotion'
 import getDesignTokens from '../assets/theme'
@@ -19,7 +20,10 @@ const defaultValue: ICustomThemeContext = {
 export const CustomThemeContext = createContext<ICustomThemeContext>(defaultValue)
 
 const CustomThemeProvider: React.FC = (props) => {
-  const [mode, setMode] = useState<ThemeMode>(defaultValue.mode)
+  const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)')
+  const [mode, setMode] = useState<ThemeMode>(
+    prefersLightMode ? ThemeMode.LIGHT : defaultValue.mode
+  )
 
   const toggleColorMode = (mode?: ThemeMode) => {
     setMode((prevMode) => mode ?? (prevMode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT))
