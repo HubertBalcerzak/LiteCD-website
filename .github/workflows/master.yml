@@ -4,7 +4,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    types: [opened, labeled, unlabeled, synchronize]
+    types: [opened, labeled, unlabeled, synchronize, ready_for_review]
 
 jobs:
   install-dependencies:
@@ -97,6 +97,7 @@ jobs:
           run: yarn build-storybook
   chromatic-deployment:
     name: Chromatic Deployment
+    if: github.ref == 'refs/heads/master' || ( github.event.pull_request && ! github.event.pull_request.draft )
     runs-on: ubuntu-latest
     needs: build-storybook
     timeout-minutes: 5
