@@ -6,7 +6,6 @@ import DaySwitch from '../inputs/DaySwitch'
 
 const ThemeSwitch = () => {
   const customThemeContext = useContext(CustomThemeContext)
-  console.log(customThemeContext)
 
   return (
     <DaySwitch

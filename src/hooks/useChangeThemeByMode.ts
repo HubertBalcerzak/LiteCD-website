@@ -22,7 +22,7 @@ const useChangeThemeByMode = (mode: ThemeMode) => {
     if (mode) {
       toggleColorMode(mode)
     }
-  }, [mode])
+  }, [])
 }
 
 export default useChangeThemeByMode

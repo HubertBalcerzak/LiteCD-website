@@ -2,7 +2,7 @@ import DaySwitchComponent, { ISwitchProps } from './index'
 import { argMode, IArgMode } from '../../../../hooks/useChangeThemeByMode'
 import React from 'react'
 import { css } from '@emotion/css'
-import { ThemeMode } from '../../../../../@types/emotion'
+import getDesignTokens from '../../../../assets/theme'
 
 export default {
   title: 'Components/Elements',
@@ -51,7 +51,7 @@ export const DaySwitch = ({ mode, ...args }: ISwitchProps & IArgMode) => (
   <div
     className={css`
       padding: 15px;
-      background-color: ${mode === ThemeMode.LIGHT ? '#82b3c9' : '#1c313a'};
+      background-color: ${getDesignTokens(mode).palette.primary.dark};
     `}
   >
     <DaySwitchComponent {...args} value={mode} />
