@@ -1,6 +1,8 @@
 import { keyframes } from '@emotion/css'
 import styled from '@emotion/styled'
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeMode } from '../../../../@types/emotion'
+import { CustomThemeContext } from '../../../providers/CustomThemeProvider'
 
 const spinner = keyframes`
   0% {
@@ -33,8 +35,14 @@ export interface LoaderProps {
   style?: Record<string, unknown>
 }
 
-const Loader = ({ loaderColor = '#000000', ...props }: LoaderProps) => (
-  <LoaderStyle loaderColor={loaderColor} {...props} />
-)
+const loaderColorsByTheme: { [key in ThemeMode]: string } = {
+  [ThemeMode.LIGHT]: '#000',
+  [ThemeMode.DARK]: '#fff'
+}
+
+const Loader = ({ loaderColor, ...props }: LoaderProps) => {
+  const { mode } = useContext(CustomThemeContext)
+  return <LoaderStyle loaderColor={loaderColor ?? loaderColorsByTheme[mode]} {...props} />
+}
 
 export default Loader
