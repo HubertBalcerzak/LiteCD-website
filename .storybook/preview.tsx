@@ -19,7 +19,9 @@ addDecorator((story, storyContext) => (
             <CssBaseline />
             {React.createElement(() => {
               useChangeThemeByMode(storyContext.args?.mode)
-              return story()
+              return story({
+                theme: true
+              })
             })}
             {/*{story()}*/}
           </ThemeProvider>
