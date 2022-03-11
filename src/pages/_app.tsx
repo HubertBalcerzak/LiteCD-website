@@ -7,9 +7,9 @@ import { SessionProvider } from 'next-auth/react'
 import GlobalStyle from '../components/elements/Layout/GlobalStyle'
 import CustomThemeProvider, { CustomThemeContext } from '../providers/CustomThemeProvider'
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   return (
-    <SessionProvider session={pageProps.session}>
+    <SessionProvider session={session}>
       <CustomThemeProvider>
         <CustomThemeContext.Consumer>
           {(customThemeContext) => (
