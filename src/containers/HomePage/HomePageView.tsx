@@ -10,6 +10,7 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import { Typography } from '@mui/material'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import { IHomePageProps } from '../../pages'
 import { IHomePageStateProps } from './useHomePage'
 import Container from '../../components/elements/Container'
@@ -19,8 +20,9 @@ import CardTitle from '../../components/elements/CardTitle'
 interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
 const HomePageView = ({}: IHomePageViewProps) => {
+  const session = useSession()
+  console.log(session)
   const theme = useTheme()
-
   return (
     <Container>
       <div
@@ -81,7 +83,10 @@ const HomePageView = ({}: IHomePageViewProps) => {
               </CardTitle>
             </a>
           </Link>
-          <Typography variant='body1'>Everything you need to manage your instances</Typography>
+          <Typography variant='body1'>
+            Everything you need to manage your instances
+            <button onClick={() => signIn()}>Sign in</button>
+          </Typography>
         </CustomizedCard>
 
         <CustomizedCard
@@ -98,7 +103,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
               </CardTitle>
             </a>
           </Link>
-          <Typography variant='body1'>Public apps</Typography>
+          <Typography variant='body1'>
+            Public apps<button onClick={() => signOut()}>Sign out</button>
+          </Typography>
         </CustomizedCard>
 
         <CustomizedCard
