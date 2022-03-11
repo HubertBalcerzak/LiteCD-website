@@ -8,14 +8,13 @@ import {
   GitHub as GitHubIcon,
   BugReport as BugReportIcon
 } from '@mui/icons-material'
-
+import Link from 'next/link'
+import { Typography } from '@mui/material'
 import { IHomePageProps } from '../../pages'
 import { IHomePageStateProps } from './useHomePage'
 import Container from '../../components/elements/Container'
 import CustomizedCard from '../../components/elements/CustomizedCard'
 import CardTitle from '../../components/elements/CardTitle'
-import Link from 'next/link'
-import { Typography } from '@mui/material'
 
 interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
