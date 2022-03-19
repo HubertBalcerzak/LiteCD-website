@@ -116,7 +116,6 @@ const HomePageView = ({}: IHomePageViewProps) => {
               </CardTitle>
             </a>
           </Link>
-          <Typography variant='body1'>Our beloved organization</Typography>
         </CustomizedCard>
 
         <CustomizedCard
@@ -133,7 +132,6 @@ const HomePageView = ({}: IHomePageViewProps) => {
               </CardTitle>
             </a>
           </Link>
-          <Typography variant='body1'>Project repository</Typography>
         </CustomizedCard>
 
         <CustomizedCard
