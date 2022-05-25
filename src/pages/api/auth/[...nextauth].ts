@@ -8,7 +8,7 @@ export default NextAuth({
       clientId: process.env.KEYCLOAK_CLIENT_ID,
       // @ts-ignore must be string
       clientSecret: process.env.KEYCLOAK_SECRET,
-      issuer: process.env.KEYCLOAK_ISSUER
-    })
-  ]
+      issuer: process.env.KEYCLOAK_ISSUER,
+    }),
+  ],
 })
