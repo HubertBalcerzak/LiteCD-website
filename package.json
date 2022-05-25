@@ -10,7 +10,9 @@
     "build-storybook": "build-storybook -s public",
     "lighthouse-check": "lhci autorun",
     "test": "jest --config=jest.config.js",
-    "test-coverage": "jest --config=jest.config.js --coverage"
+    "test-coverage": "jest --config=jest.config.js --coverage",
+    "check-style": "eslint './{src,public}/**/*.{ts,tsx,js}' --fix",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@next/eslint-plugin-next": "^12.1.6",
     "@react-theming/storybook-addon": "^1.1.3",
     "@storybook/addon-actions": "^6.4.13",
     "@storybook/addon-essentials": "^6.4.13",
@@ -51,7 +54,9 @@
     "customize-cra": "^1.0.0",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "file-loader": "^6.2.0",
     "jest": "^27.4.7",
     "jest-css-modules": "^2.1.0",

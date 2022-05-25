@@ -1,6 +1,7 @@
 import React from 'react'
 
-import Layout from '../components/elements/Layout'
+import Layout from '$/components/elements/Layout'
+
 import HomePage from '../containers/HomePage'
 
 export interface IHomePageProps {}

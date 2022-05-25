@@ -1,6 +1,5 @@
 import '@emotion/react'
-
-import { Theme as ITheme, Palette } from '@mui/material'
+import type { Theme as ITheme, Palette } from '@mui/material'
 
 declare module '@emotion/react' {
   export interface Theme extends ITheme {
@@ -12,5 +11,5 @@ declare module '@emotion/react' {
 
 export enum ThemeMode {
   LIGHT = 'light',
-  DARK = 'dark'
+  DARK = 'dark',
 }
