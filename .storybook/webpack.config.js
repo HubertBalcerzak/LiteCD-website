@@ -21,5 +21,12 @@ module.exports = async ({ config }) => {
     include: path.resolve(__dirname, '../')
   });
 
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    '$/assets': path.resolve(__dirname, '../src/assets'),
+    '$/hooks': path.resolve(__dirname, '../src/hooks'),
+    '$/types': path.resolve(__dirname, '../@types'),
+  }
+
   return config;
 };
