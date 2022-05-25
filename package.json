@@ -11,7 +11,7 @@
     "lighthouse-check": "lhci autorun",
     "test": "jest --config=jest.config.js",
     "test-coverage": "jest --config=jest.config.js --coverage",
-    "check-style": "eslint './{src,public}/**/*.{ts,tsx,js}' --fix",
+    "check-style": "eslint './{src,public}/**/*.{ts,tsx,js}'",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
