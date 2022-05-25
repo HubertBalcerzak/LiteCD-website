@@ -1,6 +1,7 @@
-import React, { createContext, useMemo, useState } from 'react'
-import { createTheme, Theme } from '@mui/material/styles'
+import type { Theme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import React, { createContext, useMemo, useState } from 'react'
 
 import { ThemeMode } from '../../@types/emotion'
 import getDesignTokens from '../assets/theme'
@@ -14,19 +15,24 @@ interface ICustomThemeContext {
 const defaultValue: ICustomThemeContext = {
   mode: ThemeMode.DARK,
   toggleColorMode: () => null,
-  theme: createTheme(getDesignTokens(ThemeMode.DARK))
+  theme: createTheme(getDesignTokens(ThemeMode.DARK)),
 }
 
-export const CustomThemeContext = createContext<ICustomThemeContext>(defaultValue)
+export const CustomThemeContext =
+  createContext<ICustomThemeContext>(defaultValue)
 
 const CustomThemeProvider: React.FC = (props) => {
   const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)')
   const [mode, setMode] = useState<ThemeMode>(
-    prefersLightMode ? ThemeMode.LIGHT : defaultValue.mode
+    prefersLightMode ? ThemeMode.LIGHT : defaultValue.mode,
   )
 
   const toggleColorMode = (mode?: ThemeMode) => {
-    setMode((prevMode) => mode ?? (prevMode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT))
+    setMode(
+      (prevMode) =>
+        mode ??
+        (prevMode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT),
+    )
   }
 
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode])

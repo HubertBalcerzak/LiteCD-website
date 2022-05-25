@@ -1,5 +1,6 @@
-import { ThemeMode } from '../../@types/emotion'
 import { useContext, useEffect } from 'react'
+
+import { ThemeMode } from '../../@types/emotion'
 import { CustomThemeContext } from '../providers/CustomThemeProvider'
 
 export interface IArgMode {
@@ -11,8 +12,8 @@ export const argMode = {
     defaultValue: ThemeMode.DARK,
     options: [ThemeMode.LIGHT, ThemeMode.DARK],
     type: { name: 'string', required: true },
-    control: { type: 'radio' }
-  }
+    control: { type: 'radio' },
+  },
 }
 
 const useChangeThemeByMode = (mode: ThemeMode) => {

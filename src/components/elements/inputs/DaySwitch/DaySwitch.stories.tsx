@@ -1,8 +1,11 @@
-import DaySwitchComponent, { ISwitchProps } from './index'
-import { argMode, IArgMode } from '../../../../hooks/useChangeThemeByMode'
-import React from 'react'
 import { css } from '@emotion/css'
+import React from 'react'
+
 import getDesignTokens from '../../../../assets/theme'
+import { argMode } from '../../../../hooks/useChangeThemeByMode'
+import type { IArgMode } from '../../../../hooks/useChangeThemeByMode'
+import DaySwitchComponent from './index'
+import type { ISwitchProps } from './index'
 
 export default {
   title: 'Components/Elements',
@@ -11,40 +14,40 @@ export default {
     daySwitchColor: {
       name: 'DaySwitch color',
       type: { name: 'string', required: true },
-      control: { type: 'color' }
+      control: { type: 'color' },
     },
     action: {
-      table: { disable: true }
+      table: { disable: true },
     },
     centerRipple: {
-      table: { disable: true }
+      table: { disable: true },
     },
     disableTouchRipple: {
-      table: { disable: true }
+      table: { disable: true },
     },
     focusRipple: {
-      table: { disable: true }
+      table: { disable: true },
     },
     focusVisibleClassName: {
-      table: { disable: true }
+      table: { disable: true },
     },
     LinkComponent: {
-      table: { disable: true }
+      table: { disable: true },
     },
     onFocusVisible: {
-      table: { disable: true }
+      table: { disable: true },
     },
     TouchRippleProps: {
-      table: { disable: true }
+      table: { disable: true },
     },
     ref: {
-      table: { disable: true }
+      table: { disable: true },
     },
     value: {
-      table: { disable: true }
+      table: { disable: true },
     },
-    ...argMode
-  }
+    ...argMode,
+  },
 }
 
 export const DaySwitch = ({ mode, ...args }: ISwitchProps & IArgMode) => (

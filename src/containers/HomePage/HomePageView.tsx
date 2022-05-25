@@ -1,21 +1,21 @@
-import React from 'react'
-import { useTheme } from '@emotion/react'
 import { css } from '@emotion/css'
+import { useTheme } from '@emotion/react'
 import {
   AdminPanelSettings as AdminPanelSettingsIcon,
   Apps as AppsIcon,
   StarOutline as StarOutlineIcon,
   GitHub as GitHubIcon,
-  BugReport as BugReportIcon
+  BugReport as BugReportIcon,
 } from '@mui/icons-material'
+import { Typography } from '@mui/material'
+import Link from 'next/link'
+import React from 'react'
 
-import { IHomePageProps } from '../../pages'
-import { IHomePageStateProps } from './useHomePage'
+import CardTitle from '../../components/elements/CardTitle'
 import Container from '../../components/elements/Container'
 import CustomizedCard from '../../components/elements/CustomizedCard'
-import CardTitle from '../../components/elements/CardTitle'
-import Link from 'next/link'
-import { Typography } from '@mui/material'
+import type { IHomePageProps } from '../../pages'
+import type { IHomePageStateProps } from './useHomePage'
 
 interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
@@ -82,7 +82,9 @@ const HomePageView = ({}: IHomePageViewProps) => {
               </CardTitle>
             </a>
           </Link>
-          <Typography variant='body1'>Everything you need to manage your instances</Typography>
+          <Typography variant='body1'>
+            Everything you need to manage your instances
+          </Typography>
         </CustomizedCard>
 
         <CustomizedCard
@@ -90,7 +92,7 @@ const HomePageView = ({}: IHomePageViewProps) => {
             grid-area: apps;
           `}
         >
-          <Link href='#' passHref>
+          <Link href='/applications' passHref>
             <a>
               <CardTitle icon={<AppsIcon />}>
                 <Typography variant='h5' variantMapping={{ h5: 'h2' }}>
@@ -139,7 +141,10 @@ const HomePageView = ({}: IHomePageViewProps) => {
             grid-area: issues;
           `}
         >
-          <Link href='https://github.com/HubertBalcerzak/LiteCD/issues' passHref>
+          <Link
+            href='https://github.com/HubertBalcerzak/LiteCD/issues'
+            passHref
+          >
             <a target='_blank' rel='noopener noreferrer'>
               <CardTitle icon={<BugReportIcon />}>
                 <Typography variant='h6' variantMapping={{ h6: 'h3' }}>

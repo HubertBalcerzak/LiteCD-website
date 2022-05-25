@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
-import { ThemeMode } from '../../../../@types/emotion'
 
-import { CustomThemeContext } from '../../../providers/CustomThemeProvider'
+import { CustomThemeContext } from '$/providers/CustomThemeProvider'
+import { ThemeMode } from '$/types/emotion'
+
 import DaySwitch from '../inputs/DaySwitch'
 
 const ThemeSwitch = () => {
