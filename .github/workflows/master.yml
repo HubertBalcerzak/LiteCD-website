@@ -13,7 +13,16 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        id: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
       - name: Install Dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - name: Cache node_modules
         uses: actions/cache@v2
@@ -84,11 +93,11 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
       - name: Build
         run: yarn build
-      - name: Cache next-app-build
+      - name: Cache next-app-build # stored for later use
         uses: actions/cache@v2
         with:
           path: '.next'
-          key: ${{ runner.os }}-next-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-${{ github.run_number }}-next-${{ hashFiles('yarn.lock') }}
   build-storybook:
       name: Storybook Build
       runs-on: ubuntu-latest
@@ -102,13 +111,13 @@ jobs:
           with:
             path: '**/node_modules'
             key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+        - name: Build
+          run: yarn build-storybook
         - name: Cache storybook build
           uses: actions/cache@v2
           with:
             path: 'storybook-static'
-            key: ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
-        - name: Build
-          run: yarn build-storybook
+            key: ${{ runner.os }}-${{ github.run_number }}-storybook-${{ hashFiles('yarn.lock') }}
   chromatic-deployment:
     name: Chromatic Deployment
     if: github.ref == 'refs/heads/master' || ( github.event.pull_request && ! github.event.pull_request.draft )
@@ -129,7 +138,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: 'storybook-static'
-          key: ${{ runner.os }}-storybook-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-${{ github.run_number }}-storybook-${{ hashFiles('yarn.lock') }}
       - name: Deploy to Chromatic
         uses: chromaui/action@v1
         with:
